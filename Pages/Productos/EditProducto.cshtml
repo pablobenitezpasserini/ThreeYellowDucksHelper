@@ -1,0 +1,35 @@
+﻿@page
+@model ThreeYellowDucks.Pages.Productos.EditProductoModel
+@{
+}
+
+<form method="post">
+	<input type="hidden" asp-for="Producto.Id" />
+	<div class="form-group">
+		<label asp-for="Producto.MarcaNombre" class="control-label"></label>
+		<input asp-for="Producto.MarcaNombre" class="form-control" />
+		<span asp-validation-for="Producto.MarcaNombre" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Producto.Tipo" class="control-label"></label>
+		<input asp-for="Producto.Tipo" class="form-control" />
+		<span asp-validation-for="Producto.Tipo" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Producto.Precio" class="control-label"></label>
+		<input asp-for="Producto.Precio" class="form-control" />
+		<span asp-validation-for="Producto.Precio" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Producto.Cantidad" class="control-label"></label>
+		<input asp-for="Producto.Cantidad" class="form-control" />
+		<span asp-validation-for="Producto.Cantidad" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Producto.IdCategoria"></label>
+		<select asp-for="Producto.IdCategoria" asp-items="@(new SelectList(Model.ListaCategorias, "Id", "NombreCategoria"))" class="form-control">
+			<option value="@Model.CategoriaDict[Model.Producto.IdCategoria]">-- Seleccione una categoría --</option>
+		</select>
+	</div>
+	<button type="submit" class="btn btn-primary">Guardar cambios</button>
+</form>

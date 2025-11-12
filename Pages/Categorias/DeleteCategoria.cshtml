@@ -1,0 +1,19 @@
+﻿@page
+@model ThreeYellowDucks.Pages.Categorias.DeleteCategoriaModel
+@{
+}
+<input type="hidden" asp-for="Categoria.Id" />
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form method="post">
+
+	<h4>¿Está seguro de que desea eliminar esta categoría?</h4>
+
+	<div class="form-group">
+		<strong>Nombre de la categoria: </strong> @Model.Categoria.NombreCategoria
+	</div>
+
+	<br/>
+
+	<button type="submit" class="btn btn-danger">Eliminar</button>
+	<a asp-page="./IndexCategorias" class="btn btn-secondary">Cancelar</a>
+</form>

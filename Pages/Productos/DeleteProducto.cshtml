@@ -1,0 +1,31 @@
+﻿@page
+@model ThreeYellowDucks.Pages.Productos.DeleteProductoModel
+@{
+}
+
+<input type="hidden" asp-for="Producto.Id" />
+
+<form method="post">
+	<h4>¿Estás seguro de que quieres eliminar el producto?</h4>
+
+	<div>
+		<strong>Marca: </strong> @Model.Producto.MarcaNombre
+	</div>
+	<div>
+		<strong>Tipo de producto: </strong> @Model.Producto.Tipo
+	</div>
+	<div>
+		<strong>Precio: </strong> @Model.Producto.Precio.ToString("C")
+	</div>
+	<div>
+		<strong>Cantidad: </strong> @Model.Producto.Cantidad
+	</div>
+	<div>
+		<strong>Categoria: </strong> @Model.CategoriaDict[Model.Producto.IdCategoria]
+	</div>
+
+	<br />
+
+	<button type="submit" class="btn btn-danger">Eliminar</button>
+	<a asp-page="./IndexProductos" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,15 @@
+﻿@page
+@model ThreeYellowDucks.Pages.Categorias.EditCategoriaModel
+@{
+}
+<form method="post">
+	<input type="hidden" asp-for="Categoria.Id" />
+
+	<div class="form-group">
+		<label asp-for="Categoria.NombreCategoria"></label>
+		<input asp-for="Categoria.NombreCategoria" class="form-control" />
+		<span asp-validation-for="Categoria.NombreCategoria" class="text-danger"></span>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
