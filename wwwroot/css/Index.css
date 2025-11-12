@@ -1,0 +1,48 @@
+﻿body {
+}
+
+#titulodiv {
+    position: relative;
+    background-image: url('/images/PatitosIndexImagen.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    width: stretch;
+}
+
+#tituloEnca {
+    background-color: #fff7e0;
+    padding: 20px;
+}
+
+.cardSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    height: 250px;
+    width: 400px;
+}
+
+.cardTitle{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.cardDescription {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 0 15px;
+}
