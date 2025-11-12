@@ -3,6 +3,7 @@ let cardArticulo = document.getElementById("cardArticulo")
 
 cardCostos.addEventListener("click", () => redirectToProducts())
 cardArticulo.addEventListener("click", () => redirectToCreateCategory())
+
 function redirectToProducts() {
     window.location.href = '/Productos/IndexProductos';
 }
