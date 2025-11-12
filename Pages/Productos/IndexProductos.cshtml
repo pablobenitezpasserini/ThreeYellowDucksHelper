@@ -5,16 +5,18 @@
 
 @if(Model.ListaCategorias.Count == 0)
 {
-	<div class="alert alert-info" role="alert">
+	<div class="alert alert-info container" role="alert">
 		No hay categorías disponibles. Por favor, agregue una categoría antes de agregar productos.
 	</div>
 }
 else if(Model.ListaProductos.Count == 0)
 {
-	<div class="alert alert-info" role="alert">
-		No hay productos disponibles. Por favor, agregue un producto.
+	<div class="container">
+		<div class="alert alert-info" role="alert">
+			No hay productos disponibles. Por favor, agregue un producto.
+		</div>
+		<a asp-page="CreateProducto" class="btn btn-success mb-3">Agregar Producto</a>
 	</div>
-	<a asp-page="CreateProducto" class="btn btn-success mb-3">Agregar Producto</a>
 }
 else
 {

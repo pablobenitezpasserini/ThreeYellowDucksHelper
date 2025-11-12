@@ -7,10 +7,12 @@
 
 @if(Model.ListaCategorias.Count == 0)
 {
-	<div class="alert alert-info" role="alert">
-		No hay categorias disponibles. Por favor, agregue una categoria.
+	<div class="container">
+		<div class="alert alert-info" role="alert">
+			No hay categorias disponibles. Por favor, agregue una categoria.
+		</div>
+		<a asp-page="CreateCategoria" class="btn btn-success mb-3">Agregar categoria</a>
 	</div>
-	<a asp-page="CreateCategoria" class="btn btn-success mb-3">Agregar categoria</a>
 
 }
 else
