@@ -25,16 +25,20 @@ namespace ThreeYellowDucks.Pages.Productos
             _categoryService = new CategoryService(categoriaRepository, productoRepository);
 		}
 
-		public void OnGet(int id)
+		public IActionResult OnGet(int id)
         {
-            ListaCategorias = _categoryService.GetAllCategories();
-            CategoriaDict = ListaCategorias.ToDictionary(c => c.Id, c => c.NombreCategoria);
-
 			Producto? producto = _productService.GetProductById(id);
 
             if (producto is not null)
             {
-                Producto = producto;
+				ListaCategorias = _categoryService.GetAllCategories();
+				CategoriaDict = ListaCategorias.ToDictionary(c => c.Id, c => c.NombreCategoria);
+				Producto = producto;
+                return Page();
+			}
+            else
+            {
+                return RedirectToPage("IndexProductos");
 			}
 		}
         public IActionResult OnPost() 

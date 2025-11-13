@@ -23,9 +23,16 @@ namespace ThreeYellowDucks.Pages.Productos
             IRepository<Categoria> categoryRepository = new JsonRepository<Categoria>(accesoDatosCategoria);
             _categoriaService = new CategoryService(categoryRepository, productRepository);
 		}
-		public void OnGet()
+		public IActionResult OnGet()
         {
             ListaCategorias = _categoriaService.GetAllCategories();
+
+            if(ListaCategorias.Count == 0)
+            {
+                return RedirectToPage("/Categorias/IndexCategorias");
+			}
+
+            return Page();
 		}
 
         public IActionResult OnPost()
